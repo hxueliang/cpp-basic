@@ -14,7 +14,7 @@ int main()
     return 0;
   }
 
-  char str[3][1024] = {0};
+  // char str[3][1024] = {0};
 
   /**
    * 方法一
@@ -33,15 +33,26 @@ int main()
   /**
    * 方法二
    */
-  for (int i = 0; i < 3; i++)
-  {
-    file.getline(str[i], 1024);
-  }
+  // for (int i = 0; i < 3; i++)
+  // {
+  //   file.getline(str[i], 1024);
+  // }
 
-  for (int i = 0; i < 3; i++)
+  // for (int i = 0; i < 3; i++)
+  // {
+  //   cout << str[i] << endl;
+  // }
+
+  /**
+   * 方法三
+   */
+  char str[1024] = {0};
+  int n = 0;
+  while (!file.eof())
   {
-    cout << str[i] << endl;
+    str[n++] = file.get();
   }
+  cout << str << endl;
 
   file.close();
 
